@@ -51,6 +51,11 @@ jobs:
      steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: Build-Artifact
+          path: ${{ github.workspace }}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
